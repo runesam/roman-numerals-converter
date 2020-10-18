@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 1;
+  inherits: false;
+}
+div.animation {
+  animation: counter 5s infinite alternate ease-in-out;
+  counter-reset: num var(--num);
+  font: 800 40px system-ui;
+  padding: 2rem;
+}
+@keyframes counter {
+  from {
+    --num: 1;
+  }
+  to {
+    --num: 100;
+  }
+}
