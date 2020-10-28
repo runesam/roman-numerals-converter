@@ -1,4 +1,6 @@
 class RomanNumerals {
+    public maxRoman = 1000000;
+
     toRoman(arabic: number) {
         const romanNumList = [
             { roman: '_M', value: 1000000 },

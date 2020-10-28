@@ -83,9 +83,9 @@ const App = (props: Props) => {
 
     const onArabicChange = (e: ChangeEvent<any>) => {
         const arabic = parseInt(e.target.value, 10);
-        if (arabic > 1000000) {
+        if (arabic > RomanNumerals.maxRoman) {
             e.preventDefault();
-            return setAlert({ open: true, message: 'Arabic Number can\'t be greater than 1,000,000' });
+            return setAlert({ open: true, message: `Arabic Number can\'t be greater than ${RomanNumerals.maxRoman.toLocaleString()}` });
         }
         setArabic(e.target.value);
         setRoman(RomanNumerals.toRoman(arabic));
